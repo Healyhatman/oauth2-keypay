@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Healyhatman\\Oauth2\\Client": "src"
+            "Healyhatman\\Oauth2\\Client\\": "src"
         }
     },
     "minimum-stability": "dev",
