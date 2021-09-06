@@ -1,37 +1,33 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "healyhatman/oauuth2-keypay",
+    "description": "Provider for the OAuth 2 client",
     "keywords": [
-        ":vendor_name",
-        "laravel",
-        "package_slug"
+        "healyhatman",
+        "keypay"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/healyhatman/oauuth2-keypay",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Kamron Brooks",
+            "email": "kamron@skyspider.com.au",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.37"
+        "php": "^7.4",
     },
     "require-dev": {
         "brianium/paratest": "^6.2",
         "nunomaduro/collision": "^5.3",
         "orchestra/testbench": "^6.15",
         "phpunit/phpunit": "^9.3",
-        "spatie/laravel-ray": "^1.23",
         "vimeo/psalm": "^4.8"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Healyhatman\\Skeleton\\": "src",
+            "Healyhatman\\Skeleton\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
@@ -46,16 +42,6 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
-            }
-        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
