@@ -3,11 +3,10 @@
 namespace Healyhatman\Oauth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
-use Psr\Http\Message\ResponseInterface;
 
 class KeyPay extends AbstractProvider
 {
-    const METHOD_DELETE = 'DELETE';
+    public const METHOD_DELETE = 'DELETE';
 
     public function getBaseAuthorizationUrl()
     {
@@ -31,7 +30,6 @@ class KeyPay extends AbstractProvider
 
     protected function checkResponse(\Psr\Http\Message\ResponseInterface $response, $data)
     {
-
     }
 
     protected function createResourceOwner(array $response, \League\OAuth2\Client\Token\AccessToken $token)
