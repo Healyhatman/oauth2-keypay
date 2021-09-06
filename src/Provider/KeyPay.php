@@ -38,7 +38,7 @@ class KeyPay extends AbstractProvider
 
     protected function checkResponse(ResponseInterface $response, $data)
     {
-        if($response->getStatusCode() >= 400) {
+        if ($response->getStatusCode() >= 400) {
             throw new KeypayProviderException(
                 isset($data['error']) ? $data['error'] : $response->getReasonPhrase(),
                 $response->getStatusCode(),
