@@ -2,7 +2,10 @@
 
 namespace Healyhatman\Oauth2\Client\Provider;
 
+use Healyhatman\Oauth2\Client\Provider\Exception\KeypayProviderException;
 use League\OAuth2\Client\Provider\AbstractProvider;
+use League\OAuth2\Client\Token\AccessToken;
+use Psr\Http\Message\ResponseInterface;
 
 class KeyPay extends AbstractProvider
 {
@@ -18,22 +21,34 @@ class KeyPay extends AbstractProvider
         return 'https://api.yourpayroll.com.au/oauth/token';
     }
 
-    public function getResourceOwnerDetailsUrl(\League\OAuth2\Client\Token\AccessToken $token)
+    public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
         return ''; // TODO Does this exist?
     }
 
     protected function getDefaultScopes()
     {
-        return ''; // TODO No scopes listed yet
+        return ['openid']; // TODO No scopes listed yet
     }
 
-    protected function checkResponse(\Psr\Http\Message\ResponseInterface $response, $data)
+    protected function getScopeSeparator()
     {
+        return ' ';
     }
 
-    protected function createResourceOwner(array $response, \League\OAuth2\Client\Token\AccessToken $token)
+    protected function checkResponse(ResponseInterface $response, $data)
     {
-        // TODO: Implement createResourceOwner() method.
+        if($response->getStatusCode() >= 400) {
+            throw new KeypayProviderException(
+                isset($data['error']) ? $data['error'] : $response->getReasonPhrase(),
+                $response->getStatusCode(),
+                $response
+            );
+        }
+    }
+
+    protected function createResourceOwner(array $response, AccessToken $token)
+    {
+        // No need? I think?
     }
 }
