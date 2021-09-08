@@ -72,9 +72,11 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [:author_name](https://github.com/:healyhatman)
-- [:special thanks](https://github.com/:calcinai)
+- [Kamron Brooks](https://github.com/:healyhatman)
 - [All Contributors](../../contributors)
+
+### Special Thanks
+ - [Calcinai](https://github.com/:calcinai)
 
 ## License
 
